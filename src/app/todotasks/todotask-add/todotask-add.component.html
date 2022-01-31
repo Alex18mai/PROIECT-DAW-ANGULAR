@@ -1,0 +1,15 @@
+<form [formGroup] = "createForm" (ngSubmit) = "addToDoTask()"  class = "register-form">
+    <p class = "label">Id:</p>
+    <input formControlName = "id" placeholder = "Id" type = "text">
+    <p class = "label">Name:</p>
+    <input formControlName = "name" placeholder = "Name" type = "text">
+    <p class = "label">Description:</p>
+    <input formControlName = "description" placeholder = "Description" type = "text">
+    <p class = "label">To Do Date:</p>
+    <input formControlName = "toDoDate" type = "datetime">
+    <p class = "label">Done Status:</p>
+    <input formControlName = "doneStatus" type = "checkbox">
+
+    <p></p>
+    <button type = "submit"> Add Task </button>
+</form>

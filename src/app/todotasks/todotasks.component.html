@@ -1,0 +1,53 @@
+<h2>{{'My Tasks' | testPipe}}</h2>
+
+<div class = "container">
+    <table mat-table [dataSource]="todotasks" class="mat-elevation-z8 table">
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef class = "centeredtext"> ID </th>
+          <td mat-cell *matCellDef="let element" class = "centeredtext"> {{element.id}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef class = "centeredtext"> Name </th>
+          <td mat-cell *matCellDef="let element" class = "centeredtext"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="details">
+          <th mat-header-cell *matHeaderCellDef class = "centeredtext"> Details </th>
+          <td mat-cell *matCellDef="let element" class = "centeredtext"> 
+            <button mat-icon-button (click) = " goToToDoTaskDetails(element.id)">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+        </td>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+          <th mat-header-cell *matHeaderCellDef class = "centeredtext"> Edit </th>
+          <td mat-cell *matCellDef="let element" class = "centeredtext"> 
+            <button mat-icon-button (click) = " goToToDoTaskEdit(element.id)">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef class = "centeredtext"> Delete </th>
+            <td mat-cell *matCellDef="let element" class = "centeredtext"> 
+              <button mat-icon-button (click) = " goToToDoTaskDelete(element.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+      </table>
+      
+      <div class="demo-button-container"> 
+        <button mat-raised-button (click)="addToDoTask()" class="demo-button"  appTestDirective>
+          Add Task
+        </button>
+      </div> 
+</div>

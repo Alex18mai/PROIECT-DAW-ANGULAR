@@ -1,0 +1,10 @@
+<div *ngIf="todotask">
+    <h2>{{todotask.name | uppercase}} Details</h2>
+    <div><span>Id: </span>{{todotask.id}}</div>
+    <div><span>Name: </span>{{todotask.name}}</div>
+    <div><span>Description: </span>{{todotask.description}}</div>
+    <div><span>To Do Date: </span>{{todotask.toDoDate}}</div>
+    <div><span>Done Status: </span>{{todotask.doneStatus}}</div>
+</div>
+
+<button (click)="goBack()">go back</button>

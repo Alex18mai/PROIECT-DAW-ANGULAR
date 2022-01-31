@@ -1,0 +1,14 @@
+<form [formGroup] = "loginForm" (ngSubmit) = "onLogin()"  class = "login-form">
+    <p class = "label">Choose a username</p>
+    <input formControlName = "email" placeholder = "Username" type = "text">
+    <p class = "label">Choose a password</p>
+    <input formControlName = "password" placeholder = "Password" type = "password">
+    <p class = "label">Choose a role:</p>
+    <p></p>
+    <button type = "submit"> Login </button>
+    <p></p>
+    <a routerLink = "/register">Do not have an account? Register here.</a>
+</form>
+
+<p></p>
+<button (click) = "onLogout()"> Logout </button>
